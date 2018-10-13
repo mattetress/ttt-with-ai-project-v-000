@@ -32,7 +32,7 @@ module Players
       WIN_OR_BLOCK.each do |c|
          if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
            @danger_array << c
-           return @danger_array
+           break
          end
       end
       false
