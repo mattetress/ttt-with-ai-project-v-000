@@ -11,7 +11,6 @@ module Players
       @opponents_spaces = []
       @my_spaces = []
       @open_spaces = []
-      @danger_array = []
     end
 
     # Computer will iterate through this array to see
