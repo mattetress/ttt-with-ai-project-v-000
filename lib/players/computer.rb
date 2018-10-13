@@ -35,7 +35,7 @@ module Players
            break
          end
       end
-      @danger_array > 0 ? @danger_array : false
+      @danger_array.size > 0 ? @danger_array : false
     end
 
 
