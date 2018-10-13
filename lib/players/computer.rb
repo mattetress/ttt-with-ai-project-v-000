@@ -76,8 +76,8 @@ module Players
         elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [8]
           choose([1, 3].sample)
 
-      elsif danger?
-        choose(danger?[2])
+      elsif danger?(board)
+        choose(danger?(board)[2])
       else choose(@open_spaces.sample)
 
     end
