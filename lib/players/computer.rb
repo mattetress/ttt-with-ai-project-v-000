@@ -6,9 +6,12 @@ module Players
     EDGES = [2, 5, 6, 7]
     CORNERS = [1, 3, 7, 9]
 
+    def initialize
+      super
     @opponents_spaces = []
     @my_spaces = []
     @open_spaces = []
+  end
 
     # Computer will iterate through this array to see
     # if indexes 0 and 1 contain the same token.
