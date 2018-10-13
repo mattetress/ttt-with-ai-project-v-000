@@ -9,12 +9,19 @@ module Players
     @opponents_spaces = []
     @my_spaces = []
 
-    close_to_winning = [
-      [1, 2], [2, 3], [4, 5], [5, 6],
-      [7, 8], [8, 9], [1, 4], [4, 7],
-      [2, 5], [5, 8], [3, 6], [6, 9],
-      [1, 5], [5, 9], [3, 5], [5, 7]
+    # Computer will iterate through this array to see
+    # if indexes 0 and 1 contain the same token.
+    # If so, it will place its token in the space
+    # indicated by index 2 to block or win the game.
+    win_or_block = [
+      [1, 2, 3], [2, 3, 1], [4, 5, 6], [5, 6, 4],
+      [7, 8, 9], [8, 9, 7], [1, 4, 7], [4, 7, 1],
+      [2, 5, 8], [5, 8, 2], [3, 6, 9], [6, 9, 3],
+      [1, 5, 9], [5, 9, 1], [3, 5, 7], [5, 7, 3],
+      [1, 7, 4], [2, 8, 5], [3, 9, 6], [1, 3, 2],
+      [4, 6, 5], [7, 9, 8], [1, 9, 5], [3, 7, 5]
     ]
+
 
     def view_board
       i = 1
@@ -35,14 +42,15 @@ module Players
 
 
     def move(board)
-      case board.turn_count
+      if board.turn_count < 3
+        case board.turn_count
         when 0
           choose(CENTER)
         when 1 && !board.taken?(CENTER)
           choose(CENTER)
         when 1 && board.taken?(CENTER)
           choose(CONRERS.sample)
-        when 2 && my_spaces == [5] && opponents_spaces == [2] 
+        when 2 && my_spaces == [5] && opponents_spaces == [2]
           choose([7, 9].sample)
         when 2 && my_spaces == [5] && opponents_spaces == [4]
           choose([3, 9].sample)
@@ -50,7 +58,10 @@ module Players
           choose([1, 7].sample)
         when 2 && my_spaces == [5] && opponents_spaces == [8]
           choose([1, 3].sample)
-      end
+        end
+      elsif 
+
+
     end
 
 
