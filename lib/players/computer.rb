@@ -8,10 +8,10 @@ module Players
 
     def initialize
       super
-    @opponents_spaces = []
-    @my_spaces = []
-    @open_spaces = []
-  end
+      @opponents_spaces = []
+      @my_spaces = []
+      @open_spaces = []
+    end
 
     # Computer will iterate through this array to see
     # if indexes 0 and 1 contain the same token.
