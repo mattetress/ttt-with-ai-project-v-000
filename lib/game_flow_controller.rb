@@ -12,6 +12,8 @@ class GameFlowController
       zero_player
     elsif input == "2"
       one_player
+    elsif input == "3"
+      two_player
     end
     puts "Would you like to play again? [Y/N]"
     replay = gets.chomp
