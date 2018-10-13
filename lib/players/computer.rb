@@ -67,8 +67,7 @@ module Players
       if board.turn_count == 0
           choose(CENTER)
         elsif danger?(board)
-          array = danger?(board)
-          choose(array[2])
+          danger?(board)
         elsif board.turn_count == 1 && !board.taken?(CENTER)
           choose(CENTER)
         elsif board.turn_count == 1 && board.taken?(CENTER)
