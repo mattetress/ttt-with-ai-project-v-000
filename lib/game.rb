@@ -59,7 +59,7 @@ class Game
     else
       puts "Cat's Game!"
     end
-    "Would you like to play another game?"
+  
   end
 
 
