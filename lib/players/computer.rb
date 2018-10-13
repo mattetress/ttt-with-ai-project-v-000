@@ -60,7 +60,7 @@ module Players
 
     def move(board)
       view_board
-      if board.turn_count < 3
+      if board.turn_count <= 2
         case board.turn_count
         when 0
           choose(CENTER)
