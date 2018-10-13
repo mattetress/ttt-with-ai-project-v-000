@@ -63,6 +63,9 @@ module Players
       view_board(board)
       if board.turn_count == 0
           choose(CENTER)
+        elsif danger?(board)
+          array = danger?(board)
+          choose(array[2])
         elsif board.turn_count == 1 && !board.taken?(CENTER)
           choose(CENTER)
         elsif board.turn_count == 1 && board.taken?(CENTER)
@@ -76,9 +79,7 @@ module Players
         elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [8]
           choose([1, 3].sample)
 
-      elsif danger?(board)
-        array = danger?(board)
-        choose(array[2])
+      
       else choose(@open_spaces.sample)
 
     end
