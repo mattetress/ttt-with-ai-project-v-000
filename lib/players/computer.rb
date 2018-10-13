@@ -26,7 +26,7 @@ module Players
       [4, 6, 5], [7, 9, 8], [1, 9, 5], [3, 7, 5]
     ]
 
-    def danger?
+    def danger?(board)
       dangerous_combo = nil
       WIN_OR_BLOCK.each do |c|
         dangerous_combo << c if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
