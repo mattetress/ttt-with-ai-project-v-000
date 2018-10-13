@@ -50,6 +50,7 @@ module Players
           end
         else @open_spaces << i
         end
+        i += 1
       end
     end
 
