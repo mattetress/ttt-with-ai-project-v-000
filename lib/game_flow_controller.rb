@@ -41,4 +41,9 @@ class GameFlowController
     end
   end
 
+  def two_player
+    game = Game.new
+    game.play
+  end
+
 end
