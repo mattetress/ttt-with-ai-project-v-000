@@ -67,7 +67,7 @@ module Players
         when 1 && !board.taken?(CENTER)
           choose(CENTER)
         when 1 && board.taken?(CENTER)
-          choose(CONRERS.sample)
+          choose(CORNERS.sample)
         when 2 && @my_spaces == [5] && @opponents_spaces == [2]
           choose([7, 9].sample)
         when 2 && @my_spaces == [5] && @opponents_spaces == [4]
