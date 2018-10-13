@@ -42,7 +42,7 @@ module Players
       @opponents_spaces.clear
       @open_spaces.clear
       i = 1
-      until i == 9 do
+      until i == 10 do
         if board.taken?(i)
           if board.cells[i - 1] == self.token
             @my_spaces << i
