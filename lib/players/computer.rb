@@ -59,7 +59,9 @@ module Players
         when 2 && my_spaces == [5] && opponents_spaces == [8]
           choose([1, 3].sample)
         end
-      elsif 
+      else
+        win_or_block.each do |c|
+          choose(c[2]) if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]]
 
 
     end
