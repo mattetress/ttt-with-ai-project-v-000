@@ -41,7 +41,7 @@ module Players
       @opponents_spaces.clear
       @open_spaces.clear
       i = 1
-      until i = 9 do
+      until i == 9 do
         if board.taken?(i)
           if board.cells[i - 1] == self.token
             my_spaces << i
@@ -60,7 +60,7 @@ module Players
 
     def move(board)
       view_board
-      if board.turn_count == 0        
+      if board.turn_count == 0
           choose(CENTER)
         elsif board.turn_count == 1 && !board.taken?(CENTER)
           choose(CENTER)
@@ -74,7 +74,7 @@ module Players
           choose([1, 7].sample)
         elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [8]
           choose([1, 3].sample)
-        
+
       elsif danger?
         choose(danger?[2])
       else choose(@open_spaces.sample)
