@@ -14,7 +14,7 @@ class GameFlowController
   end
 
   def zero_player
-    game = Game.new(Players2::Computer("X"), Players2::Computer("O"), Board.new)
+    game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
     game.play
   end
 end
