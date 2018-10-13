@@ -27,6 +27,7 @@ module Players
     ]
 
     def danger?(board)
+      best_coice = nil
       WIN_OR_BLOCK.each do |c|
          if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
             best_coice = c[2]
