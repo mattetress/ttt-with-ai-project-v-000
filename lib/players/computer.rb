@@ -36,7 +36,7 @@ module Players
 
 
 
-    def view_board
+    def view_board(board)
       @my_spaces.clear
       @opponents_spaces.clear
       @open_spaces.clear
@@ -59,7 +59,7 @@ module Players
 
 
     def move(board)
-      view_board
+      view_board(board)
       if board.turn_count == 0
           choose(CENTER)
         elsif board.turn_count == 1 && !board.taken?(CENTER)
