@@ -30,7 +30,7 @@ module Players
       end
       dangerous_combo
     end
-        
+
 
 
     def view_board
@@ -43,7 +43,7 @@ module Players
           if board.cells[i - 1] == self.token
             my_spaces << i
           else
-            opponents_spaces << i  
+            opponents_spaces << i
           end
         else open_spaces << i
         end
@@ -76,6 +76,7 @@ module Players
         end
       elsif danger?
         choose(danger?[2])
+      else choose(open_spaces.sample)
       end
 
 
