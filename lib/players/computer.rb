@@ -28,14 +28,13 @@ module Players
     ]
 
     def danger?(board)
-      @danger_array.clear
       WIN_OR_BLOCK.each do |c|
          if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
-           @danger_array << c
-           break
+            best_coice = c[2]
+
          end
       end
-      @danger_array.size > 0 ? @danger_array : false
+      best_coice if best_coice
     end
 
 
