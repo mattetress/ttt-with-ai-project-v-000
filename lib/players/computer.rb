@@ -68,18 +68,18 @@ module Players
           choose(CENTER)
         when 1 && board.taken?(CENTER)
           choose(CONRERS.sample)
-        when 2 && my_spaces == [5] && opponents_spaces == [2]
+        when 2 && @my_spaces == [5] && @opponents_spaces == [2]
           choose([7, 9].sample)
-        when 2 && my_spaces == [5] && opponents_spaces == [4]
+        when 2 && @my_spaces == [5] && @opponents_spaces == [4]
           choose([3, 9].sample)
-        when 2 && my_spaces == [5] && opponents_spaces == [6]
+        when 2 && @my_spaces == [5] && @opponents_spaces == [6]
           choose([1, 7].sample)
-        when 2 && my_spaces == [5] && opponents_spaces == [8]
+        when 2 && @my_spaces == [5] && @opponents_spaces == [8]
           choose([1, 3].sample)
         end
       elsif danger?
         choose(danger?[2])
-      else choose(open_spaces.sample)
+      else choose(@open_spaces.sample)
       end
     end
 
