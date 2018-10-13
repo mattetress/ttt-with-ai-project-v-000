@@ -6,7 +6,7 @@ module Players
     EDGES = [2, 5, 6, 7]
     CORNERS = [1, 3, 7, 9]
 
-    def initialize
+    def initialize(token)
       super
       @opponents_spaces = []
       @my_spaces = []
