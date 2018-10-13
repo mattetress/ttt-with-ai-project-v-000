@@ -27,7 +27,7 @@ class GameFlowController
     if input == "X" || input == "x"
       game = Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new)
       game.play
-    elsif input == "O" || input == "O" || input == "0"
+    elsif input == "O" || input == "o" || input == "0"
       game = Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new)
       game.play
     else
