@@ -17,7 +17,7 @@ module Players
     # if indexes 0 and 1 contain the same token.
     # If so, it will place its token in the space
     # indicated by index 2 to block or win the game.
-    win_or_block = [
+    WIN_OR_BLOCK = [
       [1, 2, 3], [2, 3, 1], [4, 5, 6], [5, 6, 4],
       [7, 8, 9], [8, 9, 7], [1, 4, 7], [4, 7, 1],
       [2, 5, 8], [5, 8, 2], [3, 6, 9], [6, 9, 3],
