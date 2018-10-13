@@ -22,6 +22,8 @@ module Players
       [4, 6, 5], [7, 9, 8], [1, 9, 5], [3, 7, 5]
     ]
 
+    def danger?
+
 
     def view_board
       i = 1
@@ -61,7 +63,8 @@ module Players
         end
       else
         win_or_block.each do |c|
-          choose(c[2]) if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]]
+          choose(c[2]) if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
+        end
 
 
     end
