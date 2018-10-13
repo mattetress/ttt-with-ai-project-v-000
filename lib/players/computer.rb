@@ -1,4 +1,4 @@
-module Players2
+module Players
   class Computer < Player
 
     # Define space types
