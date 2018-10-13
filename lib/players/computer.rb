@@ -78,9 +78,10 @@ module Players
       elsif danger?
         choose(danger?[2])
       else choose(@open_spaces.sample)
-      
+
     end
 
 
   end
+end
 end
