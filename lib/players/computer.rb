@@ -12,8 +12,15 @@ module Players
     def view_board
       i = 1
       until i = 9 do
-        board.cells[i]
+        if board.taken?(i) 
+          if board.cells[i - 1] == self.token
+            my_spaces << i 
+          else 
+            opponents_spaces << i 
+          end
+        end
       end
+    end
 
     def choose(index)
       index.to_s
