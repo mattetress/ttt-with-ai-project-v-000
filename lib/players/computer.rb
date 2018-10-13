@@ -44,11 +44,11 @@ module Players
       until i == 9 do
         if board.taken?(i)
           if board.cells[i - 1] == self.token
-            my_spaces << i
+            @my_spaces << i
           else
-            opponents_spaces << i
+            @opponents_spaces << i
           end
-        else open_spaces << i
+        else @open_spaces << i
         end
       end
     end
