@@ -30,6 +30,7 @@ module Players
       dangerous_combo = []
       WIN_OR_BLOCK.each do |c|
         dangerous_combo << c if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
+        return
       end
       dangerous_combo.size > 1 ? dangerous_combo : false
     end
@@ -79,7 +80,7 @@ module Players
         elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [8]
           choose([1, 3].sample)
 
-      
+
       else choose(@open_spaces.sample)
 
     end
