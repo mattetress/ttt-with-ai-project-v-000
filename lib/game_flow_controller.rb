@@ -25,7 +25,7 @@ class GameFlowController
     puts "Please enter X or O:"
     input = gets.chomp
     if input == "X" || input == "x"
-      game = Game.new(Players::Computer.new("O"), Players::Human.new("X"), Board.new)
+      game = Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new)
       game.play
     elsif input == "O" || input == "O" || input == "0"
       game = Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new)
