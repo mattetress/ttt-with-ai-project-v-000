@@ -34,9 +34,9 @@ module Players
 
 
     def view_board
-      my_spaces.clear
-      opponents_spaces.clear
-      open_spaces.clear
+      @my_spaces.clear
+      @opponents_spaces.clear
+      @open_spaces.clear
       i = 1
       until i = 9 do
         if board.taken?(i)
