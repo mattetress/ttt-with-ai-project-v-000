@@ -60,27 +60,25 @@ module Players
 
     def move(board)
       view_board
-      if board.turn_count <= 2
-        case board.turn_count
-        when 0
+      if board.turn_count == 0        
           choose(CENTER)
-        when 1 && !board.taken?(CENTER)
+        elsif board.turn_count == 1 && !board.taken?(CENTER)
           choose(CENTER)
-        when 1 && board.taken?(CENTER)
+        elsif board.turn_count == 1 && board.taken?(CENTER)
           choose(CORNERS.sample)
-        when 2 && @my_spaces == [5] && @opponents_spaces == [2]
+        elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [2]
           choose([7, 9].sample)
-        when 2 && @my_spaces == [5] && @opponents_spaces == [4]
+        elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [4]
           choose([3, 9].sample)
-        when 2 && @my_spaces == [5] && @opponents_spaces == [6]
+        elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [6]
           choose([1, 7].sample)
-        when 2 && @my_spaces == [5] && @opponents_spaces == [8]
+        elsif board.turn_count == 2 && @my_spaces == [5] && @opponents_spaces == [8]
           choose([1, 3].sample)
-        end
+        
       elsif danger?
         choose(danger?[2])
       else choose(@open_spaces.sample)
-      end
+      
     end
 
 
