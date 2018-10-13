@@ -11,6 +11,7 @@ module Players
       @opponents_spaces = []
       @my_spaces = []
       @open_spaces = []
+      @danger_array = []
     end
 
     # Computer will iterate through this array to see
@@ -27,12 +28,14 @@ module Players
     ]
 
     def danger?(board)
-      dangerous_combo = []
+      @danger_array.clear
       WIN_OR_BLOCK.each do |c|
-        dangerous_combo << c if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
-        return
+         if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
+           @danger_array << c
+           return @danger_array
+         end
       end
-      dangerous_combo.size > 0 ? dangerous_combo : false
+      false
     end
 
 
