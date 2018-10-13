@@ -8,6 +8,7 @@ module Players
 
     @opponents_spaces = []
     @my_spaces = []
+    @open_spaces = []
 
     # Computer will iterate through this array to see
     # if indexes 0 and 1 contain the same token.
@@ -23,17 +24,28 @@ module Players
     ]
 
     def danger?
+      dangerous_combo = nil
+      win_or_block.each do |c|
+        dangerous_combo << c if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
+      end
+      dangerous_combo
+    end
+        
 
 
     def view_board
+      my_spaces.clear
+      opponents_spaces.clear
+      open_spaces.clear
       i = 1
       until i = 9 do
         if board.taken?(i)
           if board.cells[i - 1] == self.token
             my_spaces << i
           else
-            opponents_spaces << i
+            opponents_spaces << i  
           end
+        else open_spaces << i
         end
       end
     end
@@ -44,6 +56,7 @@ module Players
 
 
     def move(board)
+      view_board
       if board.turn_count < 3
         case board.turn_count
         when 0
@@ -61,10 +74,9 @@ module Players
         when 2 && my_spaces == [5] && opponents_spaces == [8]
           choose([1, 3].sample)
         end
-      else
-        win_or_block.each do |c|
-          choose(c[2]) if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
-        end
+      elsif danger?
+        choose(danger?[2])
+      end
 
 
     end
