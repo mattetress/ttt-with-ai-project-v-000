@@ -8,7 +8,9 @@ class GameFlowController
     puts "3. 2 Player"
     puts "Please enter your selection:"
     input = gets.chomp
-    input
+    if input == "1"
+      zero_player
+    end
   end
 
   def zero_player
