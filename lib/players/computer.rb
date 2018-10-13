@@ -77,7 +77,8 @@ module Players
           choose([1, 3].sample)
 
       elsif danger?(board)
-        choose(danger?(board)[2])
+        array = danger?(board)
+        choose(array[2])
       else choose(@open_spaces.sample)
 
     end
