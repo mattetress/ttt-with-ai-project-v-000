@@ -15,11 +15,7 @@ class GameFlowController
     elsif input == "3"
       two_player
     end
-    puts "Would you like to play again? [Y/N]"
-    replay = gets.chomp
-    if replay == "Y" || replay == "y"
-      start
-    end
+    play_again?
   end
 
   def zero_player
@@ -47,5 +43,21 @@ class GameFlowController
     game = Game.new
     game.play
   end
+
+  def play_again?
+    puts "Would you like to play another game?"
+    input = gets.chomp
+    if input == "Y" || input == "y"
+      start
+    elsif input == "N" || input == "n"
+      puts "Oh, okay. That's fine."
+      sleep(1)
+      puts "Goodbye."
+    else 
+      puts "Invalid input."
+      play_again?
+    end
+  end
+    
 
 end
