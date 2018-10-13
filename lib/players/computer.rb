@@ -28,7 +28,7 @@ module Players
 
     def danger?
       dangerous_combo = nil
-      win_or_block.each do |c|
+      WIN_OR_BLOCK.each do |c|
         dangerous_combo << c if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
       end
       dangerous_combo
