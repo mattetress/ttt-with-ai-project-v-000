@@ -32,7 +32,7 @@ module Players
         dangerous_combo << c if board.taken?(c[0]) && board.taken?(c[1]) && board.cells[c[0]] == board.cells[c[1]] && !board.taken?(c[2])
         return
       end
-      dangerous_combo.size > 1 ? dangerous_combo : false
+      dangerous_combo.size > 0 ? dangerous_combo : false
     end
 
 
