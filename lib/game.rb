@@ -53,6 +53,7 @@ class Game
 
   def play
     turn until over?
+    board.display
     if won?
       puts "Congratulations #{winner}!"
     else
