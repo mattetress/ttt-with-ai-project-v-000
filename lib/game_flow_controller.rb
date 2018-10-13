@@ -26,12 +26,14 @@ class GameFlowController
     input = gets.chomp
     if input == "X" || input == "x"
       game = Game.new(Players::Computer.new("O"), Players::Human.new("X"), Board.new)
+      game.play
     elsif input == "O" || input == "O" || input == "0"
       game = Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new)
+      game.play
     else
       puts "Invalid input."
       one_player
     end
   end
-    
+
 end
